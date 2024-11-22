@@ -21,7 +21,7 @@ const hf = new HfInference(import.meta.env.VITE_HF_TOKEN)
 // console.log('Token exists:', !!import.meta.env.VITE_HF_TOKEN)
 
 
-// Text Classification - Sentiment Analysis
+// TEXT CLASSIFICATION - SENTIMENT ANALYSIS
 
 // const textToClassify = "I just bought a new camera. It's been awesome."
 
@@ -34,19 +34,35 @@ const hf = new HfInference(import.meta.env.VITE_HF_TOKEN)
 // console.log(response)
 
 
-// Text Translation
+// TEXT TRANSLATION
 
-const textToTranslate = "It's an exciting time to be an AI engineer"
+// const textToTranslate = "It's an exciting time to be an AI engineer"
 
-const textTranslationResponse = await hf.translation({
-    model: 'facebook/mbart-large-50-many-to-many-mmt',
-    inputs: textToTranslate,
-    parameters: {
-        src_lang: "en_XX",
-        tgt_lang: "es_XX"
-    }
-  })
+// const textTranslationResponse = await hf.translation({
+//     model: 'facebook/mbart-large-50-many-to-many-mmt',
+//     inputs: textToTranslate,
+//     parameters: {
+//         src_lang: "en_XX",
+//         tgt_lang: "es_XX"
+//     }
+//   })
   
-  const translation = textTranslationResponse.translation_text
-  console.log("\ntranslation:\n")
-  console.log(translation)
+//   const translation = textTranslationResponse.translation_text
+//   console.log("\ntranslation:\n")
+//   console.log(translation)
+
+
+// TEXT TO SPEECH
+
+const text = "It's an exciting time to be an A.I. engineer."
+
+const response = await hf.textToSpeech({
+  inputs: text,
+  model: "espnet/kan-bayashi_ljspeech_vits"
+})
+
+console.log(response)
+
+const audioElement = document.getElementById('speech')
+const speechUrl = URL.createObjectURL(response)
+audioElement.src = speechUrl
