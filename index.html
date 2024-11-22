@@ -1,14 +1,27 @@
 <!doctype html>
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <title></title>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="icon" type="image/svg+xml" href="hf-logo.svg">
+    <link rel="icon" type="image/png" href="hf-logo.png">
+    <title>Hugging Face Demo</title>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <main class="container">
         <img src="hf-logo.svg">
-        <div id="speech-container" style="padding-top: 20px">
+        <div id="speech-container" class="audio">
             <audio id="speech" controls />
         </div>
-        <script type="module" src="index.js"></script>
-    </body>
+        <img id="old-image" src="old-photo.jpeg" alt="Old Age Pensioners Elderly Life by Pavlofox on Pixabay">
+        <img id="new-image">
+    </main>
+
+    <script src="utils.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+
 </html>

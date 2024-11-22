@@ -5,3 +5,25 @@ html, body {
     place-items: center;
     padding-top: 42px;
 }
+
+audio {
+    max-width: 300px;
+    padding: 20px;
+}
+
+#old-image {
+    width: 100%
+}
+
+#new-image {
+    width: 100%
+}
+
+.container {
+    margin: 40px auto;
+    width: max(50vw, 500px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
